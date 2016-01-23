@@ -1,0 +1,27 @@
+﻿<Window x:Class="MVVMServiceSample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:MVVMServiceSample"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        Title="MainWindow"
+        Width="400"
+        Height="300"
+        mc:Ignorable="d">
+    <StackPanel>
+        <TextBox x:Name="textBox"
+                 Width="120"
+                 Height="23"
+                 Margin="10"
+                 HorizontalAlignment="Left"
+                 Text="{Binding Name}"
+                 TextWrapping="Wrap" />
+        <Button x:Name="button"
+                Width="75"
+                Margin="10,5"
+                HorizontalAlignment="Left"
+                Content="Show"
+                Command="{Binding ShowNameCommand}"/>
+
+    </StackPanel>
+</Window>
