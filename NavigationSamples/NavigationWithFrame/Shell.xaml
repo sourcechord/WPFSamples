@@ -1,0 +1,36 @@
+﻿<Window x:Class="NavigationWithFrame.Shell"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:NavigationWithFrame"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        Title="Shell"
+        Width="640"
+        Height="480"
+        mc:Ignorable="d">
+    <Window.CommandBindings>
+        <CommandBinding Command="NavigationCommands.GoToPage" Executed="Navigation" />
+    </Window.CommandBindings>
+    <DockPanel>
+        <Grid Background="LightGray" DockPanel.Dock="Top">
+            <TextBlock Margin="5"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Top"
+                       Text="Navigation with Frame Control"
+                       FontSize="20"
+                       TextWrapping="Wrap" />
+        </Grid>
+        <StackPanel Width="200"
+                    Background="GhostWhite"
+                    DockPanel.Dock="Left">
+            <Label>
+                <Hyperlink Command="NavigationCommands.GoToPage" CommandParameter="MainView">Main Page</Hyperlink>
+            </Label>
+            <Label>
+                <Hyperlink Command="NavigationCommands.GoToPage" CommandParameter="SubView">Sub Page</Hyperlink>
+            </Label>
+        </StackPanel>
+        <Frame x:Name="frame" NavigationUIVisibility="Hidden" />
+
+    </DockPanel>
+</Window>

@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="CustomNavigationSample.Views.SubView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:CustomNavigationSample.Views"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:view="clr-namespace:CustomNavigationSample.Views"
+             d:DesignHeight="300"
+             d:DesignWidth="300"
+             mc:Ignorable="d">
+    <Grid>
+        <TextBlock Margin="10"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top"
+                   FontSize="16"
+                   Text="Sub"
+                   TextWrapping="Wrap" />
+        <Label Margin="10,36,0,0"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top">
+            <Hyperlink Command="NavigationCommands.GoToPage" CommandParameter="{x:Type view:MainView}">Go to Main Page</Hyperlink>
+        </Label>
+    </Grid>
+</UserControl>
