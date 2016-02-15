@@ -209,20 +209,4 @@ namespace LightBoxSample.Controls
             return new Size(this._root.ActualWidth, this._root.ActualHeight);
         }
     }
-
-
-    //class CustomItemsControl : ItemsControl
-    //{
-    //    protected override DependencyObject GetContainerForItemOverride()
-    //    {
-    //        //return base.GetContainerForItemOverride();
-    //        return new ContentControl();
-    //    }
-
-    //    protected override bool IsItemItsOwnContainerOverride(object item)
-    //    {
-    //        //return base.IsItemItsOwnContainerOverride(item);
-    //        return false;
-    //    }
-    //}
 }
