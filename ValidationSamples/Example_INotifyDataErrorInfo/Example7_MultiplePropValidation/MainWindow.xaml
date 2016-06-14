@@ -1,0 +1,63 @@
+﻿<Window x:Class="Example7_MultiplePropValidation.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:Example7_MultiplePropValidation"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        Title="MainWindow"
+        Width="525"
+        Height="350"
+        mc:Ignorable="d">
+    <Window.DataContext>
+        <local:MainWindowViewModel />
+    </Window.DataContext>
+    <Window.Resources>
+        <ControlTemplate x:Key="ValidationTemplate">
+            <StackPanel>
+                <ItemsControl ItemsSource="{Binding AdornedElement.(Validation.Errors), ElementName=adornedelem}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Foreground="Red" Text="{Binding ErrorContent}" />
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+                <AdornedElementPlaceholder x:Name="adornedelem" />
+            </StackPanel>
+        </ControlTemplate>
+    </Window.Resources>
+    <Grid>
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <TextBlock HorizontalAlignment="Right"
+                       VerticalAlignment="Center"
+                       Text="ここに文字列を入力：" />
+            <TextBox Grid.Column="1"
+                     Width="120"
+                     Height="23"
+                     Margin="5"
+                     Text="{Binding InputString,
+                                    UpdateSourceTrigger=PropertyChanged}"
+                     Validation.ErrorTemplate="{StaticResource ValidationTemplate}" />
+
+            <TextBlock Grid.Row="1"
+                       HorizontalAlignment="Right"
+                       VerticalAlignment="Center"
+                       Text="上限文字数：" />
+            <TextBox Grid.Row="1"
+                     Grid.Column="1"
+                     Width="120"
+                     Height="23"
+                     Margin="5"
+                     Text="{Binding ValidationCount,
+                                    UpdateSourceTrigger=PropertyChanged}"
+                     TextWrapping="Wrap" />
+        </Grid>
+    </Grid>
+</Window>
