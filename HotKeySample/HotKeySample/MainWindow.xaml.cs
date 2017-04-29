@@ -28,7 +28,10 @@ namespace HotKeySample
             this._hotkey = new HotKeyHelper(this);
             this._hotkey.Register(ModifierKeys.Control | ModifierKeys.Shift,
                                   Key.X,
-                                  (_, __) => { MessageBox.Show("HotKey"); });
+                                  (_, __) => { MessageBox.Show("Ctrl+Shift+Xが押されました。"); });
+            this._hotkey.Register(ModifierKeys.Windows | ModifierKeys.Alt,
+                                  Key.V,
+                                  (_, __) => { MessageBox.Show("Win+Alt+Vが押されました。"); });
         }
 
         protected override void OnClosed(EventArgs e)

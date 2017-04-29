@@ -76,29 +76,22 @@ namespace HotKeySample
             var vKey = KeyInterop.VirtualKeyFromKey(key);
 
             // HotKey登録
-            while(this._hotkeyID < MAX_HOTKEY_ID)
+            while (this._hotkeyID < MAX_HOTKEY_ID)
             {
                 var ret = RegisterHotKey(this._windowHandle, this._hotkeyID, modKeyNum, vKey);
 
                 if (ret != 0)
                 {
-                    break;
+                    // HotKeyのリストに追加
+                    var hotkey = new HotKeyItem(modKey, key, handler);
+                    this._hotkeyList.Add(this._hotkeyID, hotkey);
+                    this._hotkeyID++;
+                    return true;
                 }
-
                 this._hotkeyID++;
             }
 
-            if (this._hotkeyID < MAX_HOTKEY_ID)
-            {
-                // HotKeyのリストに追加
-                var hotkey = new HotKeyItem(modKey, key, handler);
-                this._hotkeyList.Add(this._hotkeyID, hotkey);
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return false;
         }
 
         /// <summary>
