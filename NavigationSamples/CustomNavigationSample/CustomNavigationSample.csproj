@@ -55,7 +55,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="NavigationServiceEx.cs" />
     <Compile Include="Services\NavigationServiceEx\NavigationServiceEx.cs" />
     <Compile Include="Services\NavigationServiceEx\NavigationServiceExtensions.cs" />
     <Compile Include="Shell.xaml.cs">

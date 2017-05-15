@@ -18,7 +18,7 @@
                        HorizontalAlignment="Left"
                        VerticalAlignment="Top"
                        FontSize="20"
-                       Text="Navigation with Frame Control"
+                       Text="Navigation with Custom Navigation Service"
                        TextWrapping="Wrap" />
         </Grid>
         <StackPanel Width="200"
