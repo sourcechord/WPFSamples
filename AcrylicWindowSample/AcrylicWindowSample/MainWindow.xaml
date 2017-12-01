@@ -1,0 +1,39 @@
+﻿<Window x:Class="AcrylicWindowSample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:AcrylicWindowSample"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        Title="MainWindow"
+        Width="525"
+        Height="350"
+        BorderBrush="#FF2990CC"
+        BorderThickness="1"
+        mc:Ignorable="d">
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="{x:Static SystemParameters.CaptionHeight}"
+                      GlassFrameThickness="-1"
+                      ResizeBorderThickness="{x:Static SystemParameters.WindowResizeBorderThickness}"
+                      UseAeroCaptionButtons="True" />
+    </WindowChrome.WindowChrome>
+    <Window.Background>
+        <!-- Tiled noise texture -->
+        <ImageBrush ImageSource="Images/noise.png"
+                    Opacity="0.05"
+                    Stretch="None"
+                    TileMode="Tile"
+                    Viewport="0,0,128,128"
+                    ViewportUnits="Absolute" />
+    </Window.Background>
+    <Grid>
+        <TextBlock HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   FontSize="46"
+                   Foreground="CornflowerBlue"
+                   Text="Acrylic Window">
+            <TextBlock.Effect>
+                <DropShadowEffect ShadowDepth="0" BlurRadius="35" Color="DarkGray" Opacity="0.8" />
+            </TextBlock.Effect>
+        </TextBlock>
+    </Grid>
+</Window>
