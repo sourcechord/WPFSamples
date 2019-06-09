@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MVVMShowWindowSample"
         mc:Ignorable="d"
-        Title="EditDialog" Height="400" Width="600">
+        Title="EditDialog" Height="400" Width="600"
+        WindowStartupLocation="CenterOwner">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>

@@ -26,7 +26,10 @@ namespace MVVMShowWindowSample
             InitializeComponent();
 
             // MainWindowViewModelに、コンストラクタ経由でIShowWindowServiceへの依存性を注入する。
-            var showWindowService = new ShowWindowService<EditDialog, ToDoItemViewModel>();
+            var showWindowService = new ShowWindowService<EditDialog, ToDoItemViewModel>()
+            {
+                Owner = this
+            };
             this.DataContext = new MainWindowViewModel(showWindowService);
         }
     }

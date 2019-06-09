@@ -75,6 +75,9 @@ namespace MVVMShowWindowSample
             {
                 // ダイアログでOKが押された場合は、ToDoListに要素を追加する。
                 this.ToDoList.Add(newItemViewModel);
+
+                // 追加した項目を選択状態にする
+                this.SelectedItem = newItemViewModel;
             }
         }
 
