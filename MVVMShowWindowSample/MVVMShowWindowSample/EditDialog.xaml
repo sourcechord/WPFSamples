@@ -1,0 +1,35 @@
+﻿<Window x:Class="MVVMShowWindowSample.EditDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MVVMShowWindowSample"
+        mc:Ignorable="d"
+        Title="EditDialog" Height="400" Width="600">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <TextBlock Margin="5" TextWrapping="Wrap" Text="件名：" VerticalAlignment="Center" />
+            <TextBox Grid.Column="1" Height="23" Margin="5" TextWrapping="Wrap" Text="{Binding Title}" />
+        </Grid>
+        
+        <TextBox Grid.Row="1" TextWrapping="Wrap"
+                 AcceptsReturn="True"
+                 Margin="5"
+                 Text="{Binding Detail}"/>
+
+        <StackPanel Grid.Row="2"
+                    Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Content="OK" Margin="5" Width="75" IsDefault="True" Click="OkButtonClicked"/>
+            <Button Content="キャンセル" Margin="5" Width="75" IsCancel="True"/>
+        </StackPanel>
+    </Grid>
+</Window>
